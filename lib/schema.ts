@@ -1,11 +1,6 @@
 import { preguntasFrecuentes } from "@/lib/faq";
 import { site } from "@/lib/site";
 
-const geoCoordinates = {
-  latitude: 10.1706,
-  longitude: -67.9981,
-};
-
 export function getStructuredData() {
   return [
     {
@@ -28,19 +23,6 @@ export function getStructuredData() {
       telephone: site.whatsappDisplay,
       email: site.email,
       image: `${site.siteUrl}/og-image.jpg`,
-      address: {
-        "@type": "PostalAddress",
-        streetAddress:
-          "Av. Las Ferias, entre Díaz Moreno y Monte de Oca, Edificio Don Guillermo, Torre A, piso 3, apt. 3-1",
-        addressLocality: "Valencia",
-        addressRegion: "Carabobo",
-        addressCountry: "VE",
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: geoCoordinates.latitude,
-        longitude: geoCoordinates.longitude,
-      },
       areaServed: [
         {
           "@type": "City",

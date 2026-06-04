@@ -1,4 +1,4 @@
-import { GraduationCap, MessageCircle, MapPin } from "lucide-react";
+import { Calendar, GraduationCap, MessageCircle } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { site } from "@/lib/site";
 
@@ -15,9 +15,9 @@ const credentials = [
       "Comunicación clara, liderazgo y acompañamiento personalizado en cada caso",
   },
   {
-    icon: MapPin,
-    label: "Oficina",
-    value: site.address,
+    icon: Calendar,
+    label: "Consultas presenciales",
+    value: site.appointmentNote,
   },
 ];
 

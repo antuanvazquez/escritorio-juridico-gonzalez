@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Calendar, Mail, Phone } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { site, whatsappUrl } from "@/lib/site";
 
@@ -18,10 +18,10 @@ const channels = [
     external: false,
   },
   {
-    icon: MapPin,
-    label: "Ubicación",
-    value: site.location,
-    href: site.mapsUrl,
+    icon: Calendar,
+    label: "Consultas presenciales",
+    value: "Con cita previa · Valencia, Carabobo",
+    href: whatsappUrl("Hola, me gustaría agendar una cita para una consulta."),
     external: true,
   },
 ];
@@ -63,7 +63,7 @@ export function Contact() {
         </div>
 
         <p className="mt-8 text-center text-xs leading-relaxed text-white/40 sm:text-sm">
-          {site.address}
+          {site.appointmentNote}
         </p>
       </div>
     </section>

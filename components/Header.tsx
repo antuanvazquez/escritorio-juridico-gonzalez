@@ -133,8 +133,8 @@ export function Footer() {
         <p className="mt-2 text-sm text-white/60">
           {site.lawyer} · {site.location}
         </p>
-        <address className="mt-4 space-y-1 not-italic text-sm leading-relaxed text-white/50">
-          <p>{site.address}</p>
+        <div className="mt-4 space-y-1 text-sm leading-relaxed text-white/50">
+          <p>{site.appointmentNote}</p>
           <p>
             <a
               href={`tel:${site.whatsapp}`}
@@ -150,7 +150,7 @@ export function Footer() {
               {site.email}
             </a>
           </p>
-        </address>
+        </div>
         <div className="mx-auto mt-6 max-w-md border-t border-white/8 pt-6">
           <p className="text-xs leading-relaxed text-white/40">
             © {new Date().getFullYear()} {site.name}. Todos los derechos

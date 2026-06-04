@@ -17,8 +17,8 @@ export const preguntasFrecuentes = [
       "Asesoramos en el registro y formalización de PYMES, firma personal, compañía anónima, sellado de libros y actualización de documentos societarios, según los requisitos vigentes en Venezuela.",
   },
   {
-    question: "¿Dónde está ubicado el escritorio?",
-    answer: `${site.address}. Atendemos consultas en Valencia, Estado Carabobo.`,
+    question: "¿Atienden consultas presenciales?",
+    answer: `Atendemos en ${site.location}. Las reuniones con el abogado requieren cita previa; escríbenos por WhatsApp al ${site.whatsappDisplay} para coordinar día y hora.`,
   },
   {
     question: "¿Cómo agendo una consulta?",
