@@ -15,7 +15,7 @@ export function Hero() {
               <div className="relative aspect-[4/5] w-full">
                 <Image
                   src="/jorge-gonzalez.webp"
-                  alt={`Retrato de ${site.lawyer}`}
+                  alt="Abog. Jorge González, abogado en Valencia, Estado Carabobo"
                   fill
                   priority
                   sizes="(max-width: 1024px) 280px, 380px"
@@ -39,10 +39,10 @@ export function Hero() {
               {site.location}
             </p>
             <p className="mt-4 font-serif text-sm font-medium text-white/60 sm:text-base">
-              Escritorio Jurídico
+              Escritorio Jurídico · González & Asociados
             </p>
             <h1 className="mt-1 font-serif text-[1.75rem] font-semibold leading-[1.15] tracking-tight text-white sm:text-4xl lg:text-[2.75rem]">
-              González & Asociados
+              Abogado en Valencia, Carabobo
             </h1>
             <p className="mt-4 text-lg text-gold-light sm:text-xl">
               {site.tagline}
@@ -58,7 +58,8 @@ export function Hero() {
             </div>
 
             <p className="mx-auto mt-6 max-w-lg text-[15px] leading-relaxed text-white/70 lg:mx-0 lg:text-base">
-              Asesoría jurídica clara y cercana. Atención a familias,
+              Trámites legales en Valencia: divorcio, registro de empresas,
+              protección familiar y asesoría jurídica. Atención a familias,
               emprendedores y venezolanos en el exterior.
             </p>
 

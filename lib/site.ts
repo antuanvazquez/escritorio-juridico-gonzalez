@@ -1,5 +1,6 @@
 export const site = {
   name: "Escritorio Jurídico González & Asociados",
+  siteUrl: "https://www.tramiteslegalesvalencia.com",
   lawyer: "Abog. Jorge González",
   lawyerFull: "Jorge Elias González Exarcheas",
   tagline: "La solución legal a tu alcance",

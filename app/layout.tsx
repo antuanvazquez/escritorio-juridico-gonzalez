@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Source_Serif_4 } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { site } from "@/lib/site";
+import { JsonLd } from "@/components/JsonLd";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -16,12 +18,12 @@ const sourceSerif = Source_Serif_4({
 
 const title = `Abogado en Valencia, Carabobo | ${site.name}`;
 const description =
-  "Asesoría jurídica en Valencia: divorcio, registro de empresas, protección familiar y más. Atención a venezolanos en el exterior. Consulta por WhatsApp.";
+  "Trámites legales en Valencia: divorcio, registro de empresas, protección familiar y asesoría jurídica. Atención a venezolanos en el exterior. Consulta por WhatsApp.";
 
 export const metadata: Metadata = {
   title,
   description,
-  metadataBase: new URL("https://escritorio-juridico-gonzalez.vercel.app"),
+  metadataBase: new URL(site.siteUrl),
   openGraph: {
     title,
     description,
@@ -64,7 +66,11 @@ export default function RootLayout({
       lang="es-VE"
       className={`${inter.variable} ${sourceSerif.variable} scroll-smooth`}
     >
-      <body className="min-h-screen bg-white antialiased">{children}</body>
+      <body className="min-h-screen bg-white antialiased">
+        <JsonLd />
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

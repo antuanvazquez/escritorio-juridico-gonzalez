@@ -9,7 +9,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 const services = [
   {
     icon: Scale,
-    title: "Asesoría jurídica corporativa y general",
+    title: "Asesoría jurídica en Valencia",
     items: [
       "Derecho civil",
       "Derecho mercantil",
@@ -22,7 +22,7 @@ const services = [
   },
   {
     icon: Building2,
-    title: "Registro y formalización de empresas",
+    title: "Registro de empresas en Valencia",
     items: [
       "PYMES",
       "Firma personal",
@@ -33,7 +33,7 @@ const services = [
   },
   {
     icon: Briefcase,
-    title: "Divorcio y derecho de familia",
+    title: "Divorcio en Valencia",
     items: [
       "Divorcio por desafecto",
       "Divorcio por mutuo acuerdo",
@@ -44,7 +44,7 @@ const services = [
   },
   {
     icon: HeartHandshake,
-    title: "Protección y derecho de familia",
+    title: "Protección familiar en Carabobo",
     items: [
       "Curatelas",
       "Permisos de viaje",

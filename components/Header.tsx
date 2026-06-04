@@ -9,6 +9,7 @@ const navLinks = [
   { href: "#servicios", label: "Servicios" },
   { href: "#exterior", label: "Desde el exterior" },
   { href: "#sobre-mi", label: "Sobre mí" },
+  { href: "#preguntas-frecuentes", label: "Preguntas frecuentes" },
   { href: "#contacto", label: "Contacto" },
 ];
 
@@ -126,16 +127,36 @@ export function Header() {
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/8 bg-navy px-5 py-10 text-center sm:px-6">
-      <p className="font-serif text-lg font-semibold text-white">{site.name}</p>
-      <p className="mt-2 text-sm text-white/60">
-        {site.lawyer} · {site.location}
-      </p>
-      <div className="mx-auto mt-6 max-w-md border-t border-white/8 pt-6">
-        <p className="text-xs leading-relaxed text-white/40">
-          © {new Date().getFullYear()} {site.name}. Todos los derechos
-          reservados.
+    <footer className="border-t border-white/8 bg-navy px-5 py-10 sm:px-6">
+      <div className="mx-auto max-w-3xl text-center">
+        <p className="font-serif text-lg font-semibold text-white">{site.name}</p>
+        <p className="mt-2 text-sm text-white/60">
+          {site.lawyer} · {site.location}
         </p>
+        <address className="mt-4 space-y-1 not-italic text-sm leading-relaxed text-white/50">
+          <p>{site.address}</p>
+          <p>
+            <a
+              href={`tel:${site.whatsapp}`}
+              className="transition hover:text-gold-light"
+            >
+              {site.whatsappDisplay}
+            </a>
+            {" · "}
+            <a
+              href={`mailto:${site.email}`}
+              className="transition hover:text-gold-light"
+            >
+              {site.email}
+            </a>
+          </p>
+        </address>
+        <div className="mx-auto mt-6 max-w-md border-t border-white/8 pt-6">
+          <p className="text-xs leading-relaxed text-white/40">
+            © {new Date().getFullYear()} {site.name}. Todos los derechos
+            reservados.
+          </p>
+        </div>
       </div>
     </footer>
   );
