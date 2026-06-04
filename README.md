@@ -19,6 +19,23 @@ El export estático se genera en `out/`.
 
 ## Despliegue (Vercel)
 
-1. Verificar cuenta: `vercel whoami` (no debe ser cocinaquenutre)
-2. Importar repo desde GitHub bajo cuenta personal
-3. Framework preset: Next.js (detecta export estático automáticamente)
+**Repo:** https://github.com/antuanvazquez/escritorio-juridico-gonzalez
+
+### Pasos (cuenta personal — NO cocinaquenutre)
+
+1. Inicia sesión en [vercel.com](https://vercel.com) con tu cuenta personal
+2. Ve a [vercel.com/new](https://vercel.com/new)
+3. Importa `antuanvazquez/escritorio-juridico-gonzalez`
+4. Verifica que el **Team** sea tu cuenta personal antes de Deploy
+5. Framework: Next.js (auto-detectado). Sin variables de entorno necesarias.
+
+URL esperada: `https://escritorio-juridico-gonzalez.vercel.app`
+
+### CLI (opcional)
+
+```bash
+vercel logout   # si estaba ligado a otra cuenta
+vercel login    # cuenta personal
+vercel whoami   # confirmar que NO es cocinaquenutre
+vercel --prod
+```
