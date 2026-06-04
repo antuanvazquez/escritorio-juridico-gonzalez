@@ -3,17 +3,22 @@ import { whatsappUrl } from "@/lib/site";
 
 export function AbroadBanner() {
   return (
-    <section id="exterior" className="bg-yellow px-4 py-12 sm:px-6 sm:py-16">
-      <div className="mx-auto flex max-w-4xl flex-col items-center gap-6 text-center">
-        <Globe className="h-12 w-12 text-navy" aria-hidden="true" />
-        <h2 className="text-2xl font-bold text-navy sm:text-3xl">
+    <section
+      id="exterior"
+      className="relative overflow-hidden bg-navy-light section-padding"
+    >
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(184,148,63,0.12),transparent_60%)]" />
+      <div className="relative mx-auto flex max-w-3xl flex-col items-center gap-6 text-center">
+        <div className="flex h-14 w-14 items-center justify-center rounded-full border border-gold/30 bg-gold/10">
+          <Globe className="h-7 w-7 text-gold-light" aria-hidden="true" />
+        </div>
+        <h2 className="font-serif text-2xl font-semibold leading-snug text-white sm:text-3xl">
           Si te encuentras en el extranjero, podemos ayudarte
         </h2>
-        <p className="max-w-2xl text-base leading-relaxed text-navy/80">
+        <p className="max-w-2xl text-[15px] leading-relaxed text-white/70 sm:text-base">
           Muchos de nuestros clientes viven fuera de Venezuela y necesitan
           orientación para trámites de divorcio, protección familiar, registro
-          de empresas y otros asuntos legales. Te acompañamos con comunicación
-          clara y seguimiento por WhatsApp.
+          de empresas y otros asuntos legales.
         </p>
         <a
           href={whatsappUrl(
@@ -21,7 +26,7 @@ export function AbroadBanner() {
           )}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex rounded-full bg-navy px-6 py-3 text-base font-semibold text-white transition hover:bg-navy/90"
+          className="btn-primary mt-2"
         >
           Consultar desde el exterior
         </a>

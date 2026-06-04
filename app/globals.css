@@ -1,22 +1,29 @@
 @import "tailwindcss";
 
 :root {
-  --navy: #0b1f3a;
-  --gold: #c9a227;
-  --yellow: #f5c518;
-  --gray-light: #e8ecf0;
+  --navy: #0a1628;
+  --navy-light: #132743;
+  --gold: #b8943f;
+  --gold-light: #d4b56a;
+  --gold-dark: #96782e;
+  --cream: #f7f5f0;
+  --gray-light: #eef1f5;
   --background: #ffffff;
-  --foreground: #0b1f3a;
+  --foreground: #0a1628;
 }
 
 @theme inline {
   --color-navy: var(--navy);
+  --color-navy-light: var(--navy-light);
   --color-gold: var(--gold);
-  --color-yellow: var(--yellow);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
+  --color-cream: var(--cream);
   --color-gray-light: var(--gray-light);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
+  --font-serif: var(--font-source-serif);
 }
 
 html {
@@ -27,8 +34,32 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 section[id] {
-  scroll-margin-top: 5rem;
+  scroll-margin-top: 4.5rem;
+}
+
+@layer utilities {
+  .section-padding {
+    @apply px-5 py-16 sm:px-6 sm:py-20 lg:py-24;
+  }
+
+  .btn-primary {
+    @apply inline-flex min-h-12 items-center justify-center rounded-lg bg-gold px-6 py-3 text-sm font-semibold tracking-wide text-white shadow-md shadow-gold/20 transition hover:bg-gold-light active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply inline-flex min-h-12 items-center justify-center rounded-lg border border-white/25 bg-white/5 px-6 py-3 text-sm font-semibold tracking-wide text-white backdrop-blur-sm transition hover:border-gold/50 hover:bg-white/10 active:scale-[0.98];
+  }
+
+  .btn-secondary-dark {
+    @apply inline-flex min-h-12 items-center justify-center rounded-lg border border-navy/15 bg-white px-6 py-3 text-sm font-semibold tracking-wide text-navy transition hover:border-gold/40 hover:shadow-md active:scale-[0.98];
+  }
+
+  .card-elevated {
+    @apply rounded-xl border border-navy/8 bg-white shadow-sm shadow-navy/5 transition hover:shadow-md hover:shadow-navy/10;
+  }
 }

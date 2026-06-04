@@ -4,6 +4,7 @@ import {
   Scale,
   Briefcase,
 } from "lucide-react";
+import { SectionHeading } from "@/components/SectionHeading";
 
 const services = [
   {
@@ -58,34 +59,37 @@ const services = [
 
 export function Services() {
   return (
-    <section id="servicios" className="bg-gray-light px-4 py-16 sm:px-6 sm:py-20">
+    <section id="servicios" className="bg-cream section-padding">
       <div className="mx-auto max-w-6xl">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold text-navy sm:text-4xl">
-            Nuestros servicios
-          </h2>
-          <p className="mt-4 text-base text-navy/70">
-            Áreas de práctica basadas en las necesidades reales de familias y
-            emprendedores en Valencia y el estado Carabobo.
-          </p>
-        </div>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2">
+        <SectionHeading
+          eyebrow="Áreas de práctica"
+          title="Nuestros servicios"
+          description="Asesoría legal para familias y emprendedores en Valencia y el estado Carabobo."
+        />
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:gap-6">
           {services.map((service) => (
             <article
               key={service.title}
-              className="rounded-2xl border border-navy/10 bg-white p-6 shadow-sm transition hover:shadow-md"
+              className="card-elevated group border-l-4 border-l-gold p-6 sm:p-7"
             >
-              <div className="mb-4 inline-flex rounded-xl bg-navy p-3">
-                <service.icon className="h-6 w-6 text-gold" aria-hidden="true" />
+              <div className="mb-5 flex items-start gap-4">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-navy/5 transition group-hover:bg-navy group-hover:text-gold-light">
+                  <service.icon
+                    className="h-5 w-5 text-gold-dark transition group-hover:text-gold-light"
+                    aria-hidden="true"
+                  />
+                </div>
+                <h3 className="pt-1 font-serif text-lg font-semibold leading-snug text-navy">
+                  {service.title}
+                </h3>
               </div>
-              <h3 className="text-lg font-bold text-navy">{service.title}</h3>
-              <ul className="mt-4 space-y-2">
+              <ul className="space-y-2.5 pl-[3.75rem]">
                 {service.items.map((item) => (
                   <li
                     key={item}
-                    className="flex items-start gap-2 text-sm text-navy/80"
+                    className="flex items-start gap-2 text-sm leading-relaxed text-navy/75"
                   >
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-gold" />
                     {item}
                   </li>
                 ))}

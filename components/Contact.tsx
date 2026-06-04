@@ -1,46 +1,70 @@
 import { Mail, MapPin, Phone } from "lucide-react";
+import { SectionHeading } from "@/components/SectionHeading";
 import { site, whatsappUrl } from "@/lib/site";
+
+const channels = [
+  {
+    icon: Phone,
+    label: "WhatsApp",
+    value: site.whatsappDisplay,
+    href: whatsappUrl(),
+    external: true,
+  },
+  {
+    icon: Mail,
+    label: "Correo electrónico",
+    value: site.email,
+    href: `mailto:${site.email}`,
+    external: false,
+  },
+  {
+    icon: MapPin,
+    label: "Ubicación",
+    value: site.location,
+    href: site.mapsUrl,
+    external: true,
+  },
+];
 
 export function Contact() {
   return (
-    <section id="contacto" className="bg-navy px-4 py-16 sm:px-6 sm:py-20">
-      <div className="mx-auto max-w-4xl text-center">
-        <h2 className="text-3xl font-bold text-white sm:text-4xl">Contacto</h2>
-        <p className="mt-4 text-base text-white/70">
-          Escríbenos por WhatsApp o correo. Te respondemos con la mayor brevedad
-          posible.
-        </p>
-        <div className="mt-10 grid gap-6 sm:grid-cols-3">
-          <a
-            href={whatsappUrl()}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:border-gold/50 hover:bg-white/10"
-          >
-            <Phone className="h-8 w-8 text-gold" />
-            <span className="text-sm font-semibold text-white">WhatsApp</span>
-            <span className="text-sm text-white/70">{site.whatsappDisplay}</span>
-          </a>
-          <a
-            href={`mailto:${site.email}`}
-            className="flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:border-gold/50 hover:bg-white/10"
-          >
-            <Mail className="h-8 w-8 text-gold" />
-            <span className="text-sm font-semibold text-white">Correo</span>
-            <span className="text-sm text-white/70">{site.email}</span>
-          </a>
-          <a
-            href={site.mapsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:border-gold/50 hover:bg-white/10"
-          >
-            <MapPin className="h-8 w-8 text-gold" />
-            <span className="text-sm font-semibold text-white">Ubicación</span>
-            <span className="text-sm text-white/70">{site.location}</span>
-          </a>
+    <section id="contacto" className="bg-navy section-padding">
+      <div className="mx-auto max-w-3xl">
+        <SectionHeading
+          eyebrow="Contáctanos"
+          title="¿Necesitas asesoría legal?"
+          description="Escríbenos por WhatsApp o correo. Te respondemos con la mayor brevedad posible."
+          light
+        />
+
+        <div className="mt-10 space-y-3">
+          {channels.map((channel) => (
+            <a
+              key={channel.label}
+              href={channel.href}
+              {...(channel.external
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
+              className="flex items-center gap-4 rounded-xl border border-white/10 bg-white/5 p-5 transition hover:border-gold/30 hover:bg-white/8 sm:p-6"
+            >
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-gold/15">
+                <channel.icon className="h-5 w-5 text-gold-light" />
+              </div>
+              <div className="min-w-0 text-left">
+                <p className="text-xs font-semibold uppercase tracking-wider text-white/50">
+                  {channel.label}
+                </p>
+                <p className="mt-1 truncate text-sm font-medium text-white sm:text-base">
+                  {channel.value}
+                </p>
+              </div>
+            </a>
+          ))}
         </div>
-        <p className="mt-8 text-sm text-white/50">{site.address}</p>
+
+        <p className="mt-8 text-center text-xs leading-relaxed text-white/40 sm:text-sm">
+          {site.address}
+        </p>
       </div>
     </section>
   );

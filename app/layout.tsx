@@ -1,11 +1,17 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Inter, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+});
+
+const sourceSerif = Source_Serif_4({
+  variable: "--font-source-serif",
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
 });
 
 const title = `Abogado en Valencia, Carabobo | ${site.name}`;
@@ -42,14 +48,23 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0a1628",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es-VE" className={`${inter.variable} scroll-smooth`}>
-      <body className="min-h-screen antialiased">{children}</body>
+    <html
+      lang="es-VE"
+      className={`${inter.variable} ${sourceSerif.variable} scroll-smooth`}
+    >
+      <body className="min-h-screen bg-white antialiased">{children}</body>
     </html>
   );
 }
